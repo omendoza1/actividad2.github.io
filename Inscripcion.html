@@ -1,82 +1,102 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-    <meta name="viewport"content="width=device-width, initial-scale">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Inscripcion</title>
-    </head>
-    <body>
-        <nav>
-            <a href="index.html">Volver atrás</a>
-        </nav>
-        <h1>Inscripcion</h1>
-        <section style="background-color: antiquewhite;">
-            <h2>Complete los siguientes campos para continuar:</h2>
-            <input type="text" name="Primer apellido" id="apellidos" placeholder="Ingrese su primer apellido:">
-            <input type="text" name="Primer nombre" id="nombres" placeholder="Ingrese su primer nombre:">
-            <br><br>
-            <input type="text" name="Segundo apellido" id="apellidos" placeholder="Ingrese su segundio apellido:">
-            <input type="text" name="Segundo nombre nombre" id="nombres" placeholder="Ingrese su segundo nombre:">
-            <br><br>
-            <input type="number" name="Edad" id="Edad" placeholder="Ingrese su edad:">
-            <br><br>
-            <label>Seleccione su sexo o escriba su sexo:</label> <br>
-            <input type="radio" name="sexo" value="Masculino" checked> Masculino
-            <input type="radio" name="sexo" value="Femenino"> Femenino
-            <input type="text"name="Otro sexo" id="sexo" placeholder="Escriba otro sexo">
-            <br><br>
-            <label>Fecha de nacimiento:</label> <br><br>
-            <input type="date" name="mifecha"> <br><br>
-            <input type="email" name="correo" id="correo" placeholder="Ingrese su correo electrónico"><br><br>
+    <title>Inscripcion</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Volver atrás</a>
+    </nav>
+    <h1>Inscripcion</h1>
+    <section>
+        <form action="/ruta/para/enviar/datos" method="post">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="apellidos">Primer apellido:</label>
+                <input type="text" name="Primer apellido" id="apellidos"
+                    placeholder="Ingrese su primer apellido:"><br><br>
+                <label for="nombres">Primer nombre:</label>
+                <input type="text" name="Primer nombre" id="nombres" placeholder="Ingrese su primer nombre:"><br><br>
+                <label for="apellidos2">Segundo apellido:</label>
+                <input type="text" name="Segundo apellido" id="apellidos2"
+                    placeholder="Ingrese su segundo apellido:"><br><br>
+                <label for="nombres2">Segundo nombre:</label>
+                <input type="text" name="Segundo nombre" id="nombres2" placeholder="Ingrese su segundo nombre:"><br><br>
+                <label for="edad">Edad:</label>
+                <input type="number" name="Edad" id="edad" placeholder="Ingrese su edad:"><br><br>
+                <fieldset>
+                    <legend>Sexo</legend>
+                    <input type="radio" name="sexo" value="Masculino" id="masculino" checked>
+                    <label for="masculino">Masculino</label><br>
+                    <input type="radio" name="sexo" value="Femenino" id="femenino">
+                    <label for="femenino">Femenino</label><br>
+                    <input type="text" name="Otro sexo" id="otro" placeholder="Escriba otro sexo">
+                </fieldset><br>
+                <label for="fecha">Fecha de nacimiento:</label><br>
+                <input type="date" name="Fecha de nacimiento" id="fecha"><br><br>
+                <label for="correo">Correo electrónico:</label><br>
+                <input type="email" name="Correo" id="correo" placeholder="Ingrese su correo electrónico"><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Dirección</legend>
+                <label for="ciudad">Ciudad:</label><br>
+                <select name="Ciudad" id="ciudad">
+                    <option value="Barranquilla">Barranquilla</option>
+                    <option value="Bogotá">Bogotá</option>
+                    <option value="Cali">Cali</option>
+                    <option value="Medellín">Medellín</option>
+                    <option value="Otra">Otra</option>
+                </select><br><br>
+                <label for="direccion">Dirección:</label><br>
+                <input type="text" name="Dirección" id="direccion" placeholder="Ingrese su dirección"><br><br>
+            </fieldset>
             <input class="botons" type="submit" value="Incribirse">
-        </section>
-        <section style="background-color: aquamarine;">
-            <h1>¿Cómo era antes? Precio por separado y combo</h1>
-            <label>Por separado:</label> <br>
-            <table border="1" style="border-collapse: collapse; width: 100%; height: 126px;">
-                <tbody>
-                <tr style="height: 18px;">
-                <td style="width: 50%; height: 18px; text-align: center;"><strong>Curso</strong></td>
-                <td style="width: 50%; height: 18px; text-align: center;"><strong>Precio</strong></td>
+        </form>
+    </section>
+    <section>
+        <h1>¿Cómo era antes? Precio por separado y combo</h1>
+        <label>Por separado:</label> <br>
+        <table border="1" style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th class="course-header">Curso</th>
+                    <th class="price-header">Precio</th>
                 </tr>
-                <tr style="height: 18px;">
-                <td style="width: 50%; height: 18px; text-align: center;">Álgebra</td>
-                <td style="width: 50%; height: 18px; text-align: center;">10.99 USD</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="course-cell">Álgebra</td>
+                    <td class="price-cell">10.99 USD</td>
                 </tr>
-                <tr style="height: 18px;">
-                <td style="width: 50%; height: 18px; text-align: center;">Trigonometría</td>
-                <td style="width: 50%; height: 18px; text-align: center;">10.99 USD</td>
+                <tr>
+                    <td class="course-cell">Trigonometría</td>
+                    <td class="price-cell">10.99 USD</td>
                 </tr>
-                <tr style="height: 18px;">
-                <td style="width: 50%; height: 18px; text-align: center;">Geometría</td>
-                <td style="width: 50%; height: 18px; text-align: center;">10.99 USD</td>
+                <tr>
+                    <td class="course-cell">Geometría</td>
+                    <td class="price-cell">10.99 USD</td>
                 </tr>
-                <tr style="height: 18px;">
-                <td style="width: 50%; height: 18px; text-align: center;">Cálculo</td>
-                <td style="width: 50%; height: 18px; text-align: center;">10.99 USD</td>
+                <tr>
+                    <td class="course-cell">Cálculo</td>
+                    <td class="price-cell">10.99 USD</td>
                 </tr>
-                <tr style="height: 18px;">
-                <td style="width: 50%; height: 18px; text-align: center;">Estadística</td>
-                <td style="width: 50%; height: 18px; text-align: center;">10.99 USD</td>
+                <tr>
+                    <td class="course-cell">Estadística</td>
+                    <td class="price-cell">10.99 USD</td>
                 </tr>
-                <tr style="height: 18px;">
-                <td style="width: 50%; height: 18px; text-align: center;"><strong>Total</strong></td>
-                <td style="width: 50%; height: 18px; text-align: center;">54.95 USD</td>
+                <tr>
+                    <td class="course-cell total-cell"><strong>Total</strong></td>
+                    <td class="price-cell total-cell">54.95 USD</td>
                 </tr>
-                </tbody>
-                </table>
-          <label>Combo:</label>
-          <h1>¡35 USD!</h1>
-          <img src="Oferta.jpg"width="200"height="200">
-        </section>
-        <footer style="background-color: darkseagreen;">
-            <pre>
-                <h1>Contacto</h1>
-            Matematicasfacil.com.co
-            Carrera 45 N 20-10 Barranquilla-Colombia
-            095-3432512 3004368541
-            </pre>
-            </footer>
-    </body>
+            </tbody>
+        </table>
+    </section>
+</body>
+
 </html>
